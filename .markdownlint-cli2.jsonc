@@ -1,0 +1,21 @@
+{
+  // Pin behavior so CI and local runs agree.
+  "config": {
+    "default": true,
+
+    // Tables and code blocks are the bulk of this repo's content and are
+    // deliberately wide. Prose still gets a ceiling (100) so paragraphs
+    // stay reviewable in a side-by-side diff.
+    "MD013": false,
+
+    // Long URLs in link tables would still trip MD013's prose check.
+    "MD034": false,
+
+    // Repo uses H2/H3 exclusively; no need for a single top-level H1 rule
+    // to fight the "back to README" nav line.
+    "MD041": false
+  },
+
+  "globs": ["**/*.md"],
+  "ignores": ["node_modules/**", ".git/**"]
+}
